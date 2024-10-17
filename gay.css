@@ -1,0 +1,569 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px 20px;
+}
+
+.navbar-logo a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.navbar-menu {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-menu li {
+    margin-left: 20px;
+}
+
+.navbar-menu a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: background-color 0.3s;
+}
+
+.navbar-menu a:hover {
+    background-color: #03A9F4;
+    border-radius: 4px;
+}
+
+/* Search box styles */
+.navbar-search {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-search input[type="text"] {
+    padding: 5px;
+    border-radius: 4px;
+    border: none;
+}
+
+.navbar-search button {
+    padding: 5px 10px;
+    margin-left: 5px;
+    background-color: #03A9F4;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.navbar-search button:hover {
+    background-color: #0288D1;
+}
+
+/* Toggle button for mobile view */
+.navbar-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.navbar-toggle span {
+    background-color: #fff;
+    height: 3px;
+    margin: 4px 0;
+    width: 25px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .navbar-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #333;
+        margin-top: 10px;
+    }
+
+    .navbar-menu li {
+        margin: 0;
+        text-align: center;
+    }
+
+    .navbar-search {
+        display: none; /* Hide search box on smaller screens */
+    }
+
+    .navbar-toggle {
+        display: flex;
+    }
+
+    .navbar-menu.active {
+        display: flex;
+    }
+
+    .navbar-search.active {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin-top: 10px;
+    }
+}
+     /* For gay information */
+     /* Qadoos Pic  */
+     .img1 {
+        transition: all 0.3s ease-in-out; /* Ensures smooth transition when hover effect ends */
+    }
+    
+    .img1:hover {
+        border: 1px solid yellow;
+        box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.5);
+        transform: scale(1.05) rotate(-27deg); /* Rotates the image by -27 degrees */
+        border-radius: 50%;
+    }
+    /* CSS */
+.hand {
+  --skin-color: #E4C560;
+  --tap-speed: 0.6s;
+  --tap-stagger: 0.1s;
+  position: relative;
+  width: 60px; /* Adjusted width */
+  height: 50px; /* Adjusted height */
+  margin-left: 40px; /* Adjusted margin */
+}
+
+.hand:before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 50%;
+  position: absolute;
+  top: 70%;
+  right: 20%;
+  background-color: black;
+  border-radius: 40px 10px;
+  filter: blur(10px);
+  opacity: 0.3;
+}
+
+.palm {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--skin-color);
+  border-radius: 10px 40px;
+}
+
+.thumb {
+  position: absolute;
+  width: 120%;
+  height: 30px; /* Adjusted thumb height */
+  background-color: var(--skin-color);
+  bottom: -18%;
+  right: 1%;
+  transform-origin: calc(100% - 20px) 20px;
+  transform: rotate(-20deg);
+  border-radius: 30px 20px 20px 10px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  border-left: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.thumb:after {
+  width: 20%;
+  height: 60%;
+  content: '';
+  background-color: rgba(255, 255, 255, 0.3);
+  position: absolute;
+  bottom: -8%;
+  left: 5px;
+  border-radius: 60% 10% 10% 30%;
+  border-right: 2px solid rgba(0, 0, 0, 0.05);
+}
+
+.finger {
+  position: absolute;
+  width: 80%;
+  height: 25px; /* Adjusted finger height */
+  background-color: var(--skin-color);
+  bottom: 32%;
+  right: 64%;
+  transform-origin: 100% 20px;
+  animation-duration: calc(var(--tap-speed) * 2);
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  transform: rotate(10deg);
+}
+
+.finger:before {
+  content: '';
+  position: absolute;
+  width: 140%;
+  height: 20px; /* Adjusted finger's pseudo-element height */
+  background-color: var(--skin-color);
+  bottom: 8%;
+  right: 65%;
+  transform-origin: calc(100% - 20px) 20px;
+  transform: rotate(-60deg);
+  border-radius: 20px;
+}
+
+.finger:nth-child(1) {
+  animation-delay: 0;
+  filter: brightness(70%);
+  animation-name: tap-upper-1;
+}
+
+.finger:nth-child(2) {
+  animation-delay: var(--tap-stagger);
+  filter: brightness(80%);
+  animation-name: tap-upper-2;
+}
+
+.finger:nth-child(3) {
+  animation-delay: calc(var(--tap-stagger) * 2);
+  filter: brightness(90%);
+  animation-name: tap-upper-3;
+}
+
+.finger:nth-child(4) {
+  animation-delay: calc(var(--tap-stagger) * 3);
+  filter: brightness(100%);
+  animation-name: tap-upper-4;
+}
+
+@keyframes tap-upper-1 {
+  0%, 50%, 100% {
+    transform: rotate(10deg) scale(0.4);
+  }
+
+  40% {
+    transform: rotate(50deg) scale(0.4);
+  }
+}
+
+@keyframes tap-upper-2 {
+  0%, 50%, 100% {
+    transform: rotate(10deg) scale(0.6);
+  }
+
+  40% {
+    transform: rotate(50deg) scale(0.6);
+  }
+}
+
+@keyframes tap-upper-3 {
+  0%, 50%, 100% {
+    transform: rotate(10deg) scale(0.8);
+  }
+
+  40% {
+    transform: rotate(50deg) scale(0.8);
+  }
+}
+
+@keyframes tap-upper-4 {
+  0%, 50%, 100% {
+    transform: rotate(10deg) scale(1);
+  }
+
+  40% {
+    transform: rotate(50deg) scale(1);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hand {
+    width: 50px;
+    height: 40px;
+    margin-left: 20px;
+  }
+  .thumb {
+    height: 25px;
+  }
+  .finger {
+    height: 20px;
+  }
+}
+
+    
+
+/* From Uiverse.io by ercnersoy */ 
+.b1{
+    padding: 0.5rem 2.5rem 0.5rem 2.5rem;
+    box-shadow: 0px 0px 0px 3px black;
+    border: 0;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    background-color: #ffc83d;
+    color: black;
+    font-weight: bolder;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    position: relative;
+    transition: all .9s ease-in-out;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+  }
+  
+  .b1:hover {
+    background-color: #f03a17;
+    color: white;
+    /* width: 500px; */
+  }
+  
+  .b1::before {
+    content: "😍";
+    position: absolute;
+    left: -0rem;
+    top: 0rem;
+    opacity: 1;
+    font-size: 1.55rem;
+    transition: all .9s ease-in-out;
+    transform: rotate(0deg);
+  }
+  
+  .b1::before {
+    content: "😘";
+    opacity: 1;
+    visibility: visible;
+    transform: rotate(40deg);
+    font-size: 2.5rem;
+    top: -0.75rem;
+    transition: all .9s ease-in-out;
+    animation: rightRun 2s forwards;
+  }
+  
+ 
+  .b1:active::before {
+    content: "🥰";
+  }
+  
+  @keyframes rightRun {
+    100% {
+      transform: translateX(140px);
+    }
+  }
+
+
+
+/* From Uiverse.io by deamelo */ 
+.main {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+  }
+  
+  .up {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5em;
+  }
+  
+  .down {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5em;
+  }
+  
+  .card1 {
+    width: 90px;
+    height: 90px;
+    outline: none;
+    border: none;
+    background: white;
+    border-radius: 90px 5px 5px 5px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+      rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    transition: 0.2s ease-in-out;
+  }
+  
+  .whatsapp {
+    margin-top: 1.5em;
+    margin-left: 1.2em;
+    fill: #00ff00;
+  }
+  
+  .card2 {
+    width: 90px;
+    height: 90px;
+    outline: none;
+    border: none;
+    background: white;
+    border-radius: 5px 90px 5px 5px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+      rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    transition: 0.2s ease-in-out;
+  }
+  
+  .linkedin {
+    margin-top: 1.5em;
+    margin-left: -0.9em;
+    fill: #0077b5;
+  }
+  
+  .card3 {
+    width: 90px;
+    height: 90px;
+    outline: none;
+    border: none;
+    background: white;
+    border-radius: 5px 5px 5px 90px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+      rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    transition: 0.2s ease-in-out;
+  }
+  
+  .github {
+    margin-top: -0.6em;
+    margin-left: 1.2em;
+  }
+  
+  .card4 {
+    width: 90px;
+    height: 90px;
+    outline: none;
+    border: none;
+    background: white;
+    border-radius: 5px 5px 90px 5px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+      rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    transition: 0.2s ease-in-out;
+  }
+  
+  .discord {
+    margin-top: -0.9em;
+    margin-left: -1.2em;
+    fill: #8c9eff;
+  }
+  
+  .card1:hover {
+    cursor: pointer;
+    scale: 1.1;
+    background-color: #00ff00;
+  }
+  
+  .card1:hover .whatsapp {
+    fill: white;
+  }
+  
+  .card2:hover {
+    cursor: pointer;
+    scale: 1.1;
+    background-color: #0077b5;
+  }
+  
+  .card2:hover .linkedin {
+    fill: white;
+  }
+  
+  .card3:hover {
+    cursor: pointer;
+    scale: 1.1;
+    background-color: black;
+  }
+  
+  .card3:hover .github {
+    fill: white;
+  }
+  
+  .card4:hover {
+    cursor: pointer;
+    scale: 1.1;
+    background-color: #8c9eff;
+  }
+  
+  .card4:hover .discord {
+    fill: white;
+  }
+  /* From Uiverse.io by escannord */ 
+.radio-input input {
+    display: none;
+  }
+  
+  .radio-input label {
+    --border-color: #a1b0d8;
+  
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    min-width: 5rem;
+    margin: 1rem;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    align-items: center;
+  }
+  
+  .radio-input input:checked + label {
+    --border-color: #2f64d8;
+    border-color: var(--border-color);
+    border-width: 2px;
+  }
+  .radio-input label:hover {
+    --border-color: #2f64d8;
+    border-color: var(--border-color);
+  }
+  
+  .radio-input {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .circle {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: rgb(189, 187, 207);
+    margin-right: 0.5rem;
+    position: relative;
+  }
+  
+  .radio-input input:checked + label span.circle::before {
+    content: "";
+    display: inline;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #2f64d8;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+  }
+  .text {
+    display: flex;
+    align-items: center;
+  }
+  
+  .price {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    font-weight: bold;
+  }
+  
+  .small {
+    font-size: 10px;
+    color: rgb(136, 138, 139);
+    font-weight: 100;
+  }
+  
+  .info {
+    position: absolute;
+    display: inline-block;
+    font-size: 11px;
+    background-color: rgb(31, 236, 123);
+    border-radius: 20px;
+    padding: 1px 9px;
+    top: 0;
+    transform: translateY(-50%);
+    right: 5px;
+  }
+  
